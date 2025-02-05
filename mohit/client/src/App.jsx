@@ -15,29 +15,53 @@ const App = () => {
   const { authToken } = useAuth();
 
   return (
-    <div>
-      <Routes>
-        <Route
-          path="/signup"
-          element={!authToken ? <div><Navbar /><SignUp /></div> : <Navigate to="/" />}
-        />
-        <Route
-          path="/login"
-          element={!authToken ? <div><Navbar /><Login /></div> : <Navigate to="/" />}
-        />
-        <Route
-          path="/"
-          element={<div><Navbar /><Products /></div>}
-        />
-        <Route path="/products" element={<div><Navbar /><Products /></div>} />
-        <Route path="/sell" element={!authToken ? <div><Navbar /><Login /></div> : <div><Navbar /><Sell /></div>} />
-        <Route path="/product/:id" element={<div><Navbar /><Product /></div>} />
-        <Route path="/chat/:id" element={!authToken ? <div><Navbar /><Login /></div> : <div><Navbar /><Chat /></div>} />
-        <Route path="/messages" element={!authToken ? <div><Navbar /><Login /></div> : <div><Navbar /><Messages /></div>} />
-      </Routes>
-      <Footer />
-    </div>
+    <>
+      <div style={styles.container}>
+        <Navbar />
+        <main style={styles.main}>
+          <Routes>
+            <Route
+              path="/signup"
+              element={!authToken ? <SignUp /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/login"
+              element={!authToken ? <Login /> : <Navigate to="/" />}
+            />
+            <Route path="/" element={<Products />} />
+            <Route path="/products" element={<Products />} />
+            <Route
+              path="/sell"
+              element={authToken ? <Sell /> : <Navigate to="/login" />}
+            />
+            <Route path="/product/:id" element={<Product />} />
+            <Route
+              path="/chat/:id"
+              element={authToken ? <Chat /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/messages"
+              element={authToken ? <Messages /> : <Navigate to="/login" />}
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
 export default App;
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh",
+    maxWidth: "1280px",
+    margin: "0 auto",
+  },
+  main: {
+    flexGrow: 1,
+  },
+};
