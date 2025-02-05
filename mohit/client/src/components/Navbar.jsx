@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthProvider';
 import './navbar.css';
 
@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar-logo">
-        <a href="/">MOLX</a>
+        <NavLink href="/">MOLX</NavLink>
       </div>
       <div className="navbar-options">
         {authToken ? (
