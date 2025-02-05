@@ -1,0 +1,54 @@
+.sell-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .sell-page h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .sell-page form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sell-page input[type="text"],
+  .sell-page input[type="number"],
+  .sell-page textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 40px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  .sell-page textarea {
+    height: 100px;
+  }
+  
+  .sell-page input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  .sell-page button {
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
