@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar-logo">
-        <NavLink href="/">MOLX</NavLink>
+        <NavLink to="/">MOLX</NavLink>
       </div>
       <div className="navbar-options">
         {authToken ? (
