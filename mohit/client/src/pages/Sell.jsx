@@ -81,7 +81,7 @@ const Sell = () => {
     data.append("location", location);
 
     try {
-      const res = await axios.post("http://localhost:8081/product/createproduct", data);
+      const res = await axios.post("https://olx-clone-fwgz.onrender.com/product/createproduct", data);
       console.log(res.data);
       setLoading(false);
       alert("Product added");

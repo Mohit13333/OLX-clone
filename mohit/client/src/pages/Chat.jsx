@@ -5,7 +5,7 @@ import { useAuth } from "../contexts/AuthProvider";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
-const socket = io("http://localhost:8081");
+const socket = io("https://olx-clone-fwgz.onrender.com");
 
 const Chat = () => {
   const { id } = useParams();
@@ -23,7 +23,7 @@ const Chat = () => {
   }, [authToken]);
 
   useEffect(() => {
-    fetch(`http://localhost:8081/chat/${id}`)
+    fetch(`https://olx-clone-fwgz.onrender.com/chat/${id}`)
       .then((response) => response.json())
       .then((data) => setMessages(data))
       .catch((error) => console.error("Error fetching chat messages:", error));
@@ -31,7 +31,7 @@ const Chat = () => {
     const otherUserId = id.replace(sender, "");
     console.log(otherUserId);
     axios
-      .post("http://localhost:8081/user/user", { userId: otherUserId })
+      .post("https://olx-clone-fwgz.onrender.com/user/user", { userId: otherUserId })
       .then((response) => setOtherUser(response.data.name))
       .catch((error) => console.error("Error fetching user:", error));
 

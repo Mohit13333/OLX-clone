@@ -22,7 +22,7 @@ const Product = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8081/product/product/${id}`)
+    fetch(`https://olx-clone-fwgz.onrender.com/product/product/${id}`)
       .then((response) => response.json())
       .then((data) => setProduct(data))
       .catch((error) => console.error('Error fetching product:', error));

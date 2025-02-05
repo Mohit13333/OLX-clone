@@ -17,7 +17,7 @@ const Login = () => {
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:8081/user/login", {
+            const response = await axios.post("https://olx-clone-fwgz.onrender.com/user/login", {
                 mobile,
                 password
             });

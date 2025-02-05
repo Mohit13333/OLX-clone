@@ -38,7 +38,7 @@ const Products = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:8081/product/nearby?latitude=${latitude}&longitude=${longitude}`
+          `https://olx-clone-fwgz.onrender.com/product/nearby?latitude=${latitude}&longitude=${longitude}`
         );
 
         if (!response.ok) {

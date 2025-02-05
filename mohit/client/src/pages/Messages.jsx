@@ -19,7 +19,7 @@ const Messages = () => {
 
   useEffect(() => {
     if (userId) {
-      axios.get(`http://localhost:8081/chat/user/${userId}`)
+      axios.get(`https://olx-clone-fwgz.onrender.com/chat/user/${userId}`)
         .then((response) => setChats(response.data))
         .catch((error) => console.error('Error fetching chats:', error));
     }
